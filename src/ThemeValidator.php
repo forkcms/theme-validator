@@ -1,9 +1,9 @@
 <?php
 
-namespace ForkCMS\ForkThemeValidator;
+namespace ForkCMS\ThemeValidator;
 
-use ForkCMS\ForkThemeValidator\Exception\DirectoryDoesNotContainInfoXML;
-use ForkCMS\ForkThemeValidator\Exception\PathIsNotADirectory;
+use ForkCMS\ThemeValidator\Exception\DirectoryDoesNotContainInfoXML;
+use ForkCMS\ThemeValidator\Exception\PathIsNotADirectory;
 
 class ThemeValidator
 {

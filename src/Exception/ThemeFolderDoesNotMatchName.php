@@ -1,6 +1,6 @@
 <?php
 
-namespace ForkCMS\ForkThemeValidator\Exception;
+namespace ForkCMS\ThemeValidator\Exception;
 
 use Exception;
 
