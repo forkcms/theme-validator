@@ -2,8 +2,11 @@
 
 namespace ForkCMS\ThemeValidator;
 
+use Exception;
 use ForkCMS\ThemeValidator\Exception\DirectoryDoesNotContainInfoXML;
+use ForkCMS\ThemeValidator\Exception\InvalidXML;
 use ForkCMS\ThemeValidator\Exception\PathIsNotADirectory;
+use SimpleXMLElement;
 
 class ThemeValidator
 {
@@ -20,6 +23,8 @@ class ThemeValidator
         $directory = $pathToTheme;
 
         $this->assertDirectoryHasInfoXML($directory);
+
+        $themeInfo = $this->convertInfoXMLToArray($directory . '/info.xml');
     }
 
     /**
@@ -56,6 +61,27 @@ class ThemeValidator
     {
         if (!file_exists($directory . '/info.xml')) {
             throw DirectoryDoesNotContainInfoXML::withDirectory($directory);
+        }
+    }
+
+    /**
+     * @param string $pathToInfoXML
+     *
+     * @return array
+     *
+     * @throws InvalidXML
+     */
+    private function convertInfoXMLToArray($pathToInfoXML)
+    {
+        try {
+            $infoXML = new SimpleXMLElement($pathToInfoXML, LIBXML_NOCDATA, true);
+
+            $infoXMLConverter = new InfoXMLConverter();
+
+            return $infoXMLConverter->toArray($infoXML);
+
+        } catch (Exception $exception) {
+            throw InvalidXML::withFilePathAndPreviousException($pathToInfoXML, $exception);
         }
     }
 }
