@@ -7,6 +7,9 @@ use ForkCMS\ThemeValidator\Exception\PathIsNotADirectory;
 
 class ThemeValidator
 {
+    /**
+     * @param string $pathToTheme
+     */
     public function validate($pathToTheme)
     {
         $pathToTheme = $this->cleanUpPathToTheme($pathToTheme);
