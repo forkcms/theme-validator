@@ -25,6 +25,9 @@ class ThemeValidator
         $this->assertDirectoryHasInfoXML($directory);
 
         $themeInfo = $this->convertInfoXMLToArray($directory . '/info.xml');
+
+        $themeInfoValidator = new ThemeInfoValidator();
+        $themeInfoValidator->validate($themeInfo);
     }
 
     /**
