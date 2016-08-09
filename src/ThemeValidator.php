@@ -30,7 +30,7 @@ class ThemeValidator
      */
     private function cleanUpPathToTheme($pathToTheme)
     {
-        $pathToTheme = trim($pathToTheme, '/');
+        $pathToTheme = rtrim($pathToTheme, '/');
 
         return $pathToTheme;
     }
