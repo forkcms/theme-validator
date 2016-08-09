@@ -19,8 +19,8 @@
     }
   ],
   "autoload": {
-    "psr-0": {
-      "ForkCMS/ThemeValidator": "/src"
+    "psr-4": {
+      "ForkCMS\\ThemeValidator\\": "/src"
     }
   },
   "require": {
