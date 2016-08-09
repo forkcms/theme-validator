@@ -1,0 +1,32 @@
+{
+  "name": "forkcms/theme-validator",
+  "type": "library",
+  "description": "A validator for Fork CMS themes",
+  "keywords": [
+    "Fork CMS",
+    "Fork",
+    "CMS",
+    "Themes",
+    "Validator"
+  ],
+  "homepage": "http://www.fork-cms.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stijn Vrolijk",
+      "email": "stijn@sumocoders.be",
+      "homepage": "http://www.sumocoders.be"
+    }
+  ],
+  "autoload": {
+    "psr-0": {
+      "ForkCMS/ThemeValidator": "/src"
+    }
+  },
+  "require": {
+    "php": "^5.5 || ^7.0"
+  },
+  "config": {
+    "bin-dir": "bin"
+  }
+}
