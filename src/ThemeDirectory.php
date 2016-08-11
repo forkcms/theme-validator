@@ -51,7 +51,8 @@ class ThemeDirectory
     }
 
     /**
-     * Makes sure the folder path is th
+     * Makes sure the folder path never ends with a slash
+     *
      * @param string $pathToTheme
      *
      * @return string
