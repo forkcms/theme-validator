@@ -7,5 +7,5 @@ namespace ForkCMS\ThemeValidator;
  */
 class ThemeTemplate
 {
-
+    // @TODO: implement this class
 }
