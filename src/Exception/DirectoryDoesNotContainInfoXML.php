@@ -3,11 +3,17 @@
 namespace ForkCMS\ThemeValidator\Exception;
 
 use Exception;
+use ForkCMS\ThemeValidator\ThemeDirectory;
 
 final class DirectoryDoesNotContainInfoXML extends Exception
 {
-    public static function withDirectory($directory)
+    /**
+     * @param ThemeDirectory $directory
+     *
+     * @return self
+     */
+    public static function withDirectory(ThemeDirectory $directory)
     {
-        return new self('The theme directory "' . $directory . '" doesn\'t contain an info.xml file');
+        return new self('The theme directory "' . $directory->getPath() . '" doesn\'t contain an info.xml file');
     }
 }
