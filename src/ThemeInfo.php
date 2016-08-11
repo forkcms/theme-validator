@@ -67,7 +67,7 @@ class ThemeInfo
         try {
             $infoXML = new SimpleXMLElement($directory->getInfoXMLPath(), LIBXML_NOCDATA, true);
         } catch (Exception $exception) {
-            throw InvalidXML::withFilePathAndPreviousException($directory->getInfoXMLPath(), $exception);
+            throw InvalidXML::withFilePath($directory->getInfoXMLPath(), $exception);
         }
 
         $themeInfo = self::fromXML($infoXML);
