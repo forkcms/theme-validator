@@ -4,6 +4,7 @@ namespace ForkCMS\ThemeValidator;
 
 use ForkCMS\ThemeValidator\Exception\NodeNotFoundInInfoXML;
 use ForkCMS\ThemeValidator\Exception\NoThemeNodeInInfoXML;
+use ForkCMS\ThemeValidator\ValueObject\Version;
 use SimpleXMLElement;
 
 /**
@@ -112,8 +113,11 @@ class InfoXMLConverter
      */
     private function getRequirementsFromThemeNode(SimpleXMLElement $themeNode)
     {
-        // @TODO: build actual theme requirements
-        return new ThemeRequirements();
+        $requirementsNode = $this->getNodeFromParentNode($themeNode, 'requirements');
+
+        return new ThemeRequirements(
+            Version::fromString($this->getNodeValueFromParentNode($requirementsNode, 'minimum_version'))
+        );
     }
 
     /**
