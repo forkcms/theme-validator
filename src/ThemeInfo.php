@@ -61,6 +61,7 @@ class ThemeInfo
      * @return self
      *
      * @throws InvalidXML
+     * @throws ThemeDirectoryDoesNotMatchName
      */
     public static function fromDirectory(ThemeDirectory $directory)
     {
